@@ -1,65 +1,129 @@
-import Image from "next/image";
+import Link from "next/link";
+
+const services = [
+  {
+    title: "Discovery & positioning",
+    body: "We clarify your offer, audience, and goals so the site tells one coherent story.",
+  },
+  {
+    title: "Design & UX",
+    body: "Modern layouts, strong typography, and mobile-first flows that feel effortless.",
+  },
+  {
+    title: "Build & launch",
+    body: "Performance-minded Next.js sites you can grow with — not a fragile template stack.",
+  },
+  {
+    title: "Care & iteration",
+    body: "Ongoing updates, analytics, and improvements after you go live.",
+  },
+];
+
+const steps = [
+  {
+    title: "Align",
+    body: "Short workshop + sitemap so scope and messaging are locked early.",
+  },
+  {
+    title: "Design & build",
+    body: "Review milestones, not surprises — you approve before we ship.",
+  },
+  {
+    title: "Launch & measure",
+    body: "Hosting guidance, SEO basics, and a clean handoff.",
+  },
+];
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <div className="flex flex-1 flex-col bg-zinc-50 dark:bg-zinc-950">
+      <section className="border-b border-zinc-200/80 bg-background px-4 py-16 dark:border-zinc-800/80 sm:px-6 sm:py-24">
+        <div className="mx-auto max-w-3xl text-center">
+          <h1 className="text-balance text-3xl font-semibold tracking-tight text-foreground sm:text-4xl sm:leading-tight">
+            Websites that make your business look as capable as you are.
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className="mx-auto mt-6 max-w-2xl text-pretty text-lg leading-relaxed text-zinc-600 dark:text-zinc-400">
+            Arcline Studio partners with owners and marketing teams to launch
+            clear, conversion-focused sites — without the enterprise price tag
+            or endless timelines.
           </p>
+          <div className="mt-10 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center">
+            <Link
+              href="/contact"
+              className="inline-flex h-12 items-center justify-center rounded-full bg-foreground px-8 text-sm font-medium text-background transition-colors hover:opacity-90"
+            >
+              Start a project
+            </Link>
+            <Link
+              href="/projects"
+              className="inline-flex h-12 items-center justify-center rounded-full border border-zinc-300 bg-background px-8 text-sm font-medium text-foreground transition-colors hover:bg-zinc-50 dark:border-zinc-700 dark:hover:bg-zinc-900"
+            >
+              See selected work
+            </Link>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      <section className="mx-auto w-full max-w-5xl px-4 py-16 sm:px-6 sm:py-20">
+        <h2 className="text-center text-sm font-semibold uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
+          What we do
+        </h2>
+        <p className="mx-auto mt-2 max-w-xl text-center text-2xl font-semibold tracking-tight text-foreground">
+          End-to-end websites for teams that need clarity and speed.
+        </p>
+        <ul className="mt-12 grid gap-6 sm:grid-cols-2">
+          {services.map((s) => (
+            <li
+              key={s.title}
+              className="rounded-2xl border border-zinc-200/80 bg-background p-6 shadow-sm dark:border-zinc-800/80"
+            >
+              <h3 className="font-semibold text-foreground">{s.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
+                {s.body}
+              </p>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section className="border-y border-zinc-200/80 bg-background px-4 py-16 dark:border-zinc-800/80 sm:px-6 sm:py-20">
+        <div className="mx-auto max-w-5xl">
+          <h2 className="text-center text-sm font-semibold uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
+            How we work
+          </h2>
+          <p className="mx-auto mt-2 max-w-xl text-center text-2xl font-semibold tracking-tight text-foreground">
+            A straightforward process from first call to launch.
+          </p>
+          <ol className="mt-12 grid gap-8 sm:grid-cols-3">
+            {steps.map((step, i) => (
+              <li key={step.title} className="relative text-center sm:text-left">
+                <span className="text-xs font-bold text-zinc-400 dark:text-zinc-500">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <h3 className="mt-1 font-semibold text-foreground">
+                  {step.title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
+                  {step.body}
+                </p>
+              </li>
+            ))}
+          </ol>
         </div>
-      </main>
+      </section>
+
+      <section className="mx-auto max-w-5xl px-4 py-16 text-center sm:px-6 sm:py-20">
+        <p className="text-sm font-medium text-zinc-600 dark:text-zinc-400">
+          Trusted by local service brands, professional firms, and B2B teams
+          modernizing their first impression.
+        </p>
+        <Link
+          href="/contact"
+          className="mt-6 inline-flex h-12 items-center justify-center rounded-full bg-foreground px-8 text-sm font-medium text-background transition-colors hover:opacity-90"
+        >
+          Start a project
+        </Link>
+      </section>
     </div>
   );
 }
