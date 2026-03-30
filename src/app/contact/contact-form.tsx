@@ -6,7 +6,7 @@ import { submitContact, type ContactState } from "./actions";
 const initialState: ContactState = { ok: false };
 
 const inputClass =
-  "mt-1 w-full rounded-lg border border-zinc-300 bg-background px-3 py-2 text-sm text-foreground outline-none ring-offset-background placeholder:text-zinc-400 focus:border-zinc-500 focus:ring-2 focus:ring-zinc-500/20 dark:border-zinc-700 dark:focus:border-zinc-500";
+  "mt-1 w-full rounded-lg border border-stone-300 bg-background px-3 py-2 text-sm text-foreground outline-none ring-offset-background placeholder:text-stone-400 focus:border-green-700 focus:ring-2 focus:ring-green-700/20 dark:border-stone-700 dark:focus:border-green-400 dark:focus:ring-green-400/20";
 
 const labelClass = "text-sm font-medium text-foreground";
 
@@ -139,7 +139,7 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={pending}
-        className="inline-flex h-12 w-full items-center justify-center rounded-full bg-foreground text-sm font-medium text-background transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto sm:min-w-[160px] sm:px-8"
+        className="inline-flex h-12 w-full items-center justify-center rounded-full bg-green-800 text-sm font-medium text-white transition-colors hover:bg-green-900 disabled:cursor-not-allowed disabled:opacity-60 dark:bg-green-500 dark:text-green-950 dark:hover:bg-green-400 sm:w-auto sm:min-w-[160px] sm:px-8"
       >
         {pending ? "Sending…" : "Send message"}
       </button>
