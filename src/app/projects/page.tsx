@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function ProjectsPage() {
   return (
-    <div className="flex flex-1 flex-col bg-stone-50 px-4 py-12 dark:bg-stone-950 sm:px-6 sm:py-16">
+    <div className="flex flex-1 flex-col bg-background px-4 py-12 sm:px-6 sm:py-16">
       <div className="mx-auto w-full max-w-5xl">
         <h1 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
           Selected work
